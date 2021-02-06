@@ -92,6 +92,6 @@ public class Produto {
 	}
 	
 	public void estocar() {
-		System.out.println("O produto fo estocado");
+		System.out.println("O produto foi estocado");
 	}
 }

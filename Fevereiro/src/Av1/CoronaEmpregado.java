@@ -28,6 +28,14 @@ package Av1;
 		public void setAposentado(boolean isAposentado) {
 			this.isAposentado = isAposentado;
 		}
+		
+		public void getBeneficioEmpregado() {
+			if (isAposentado == true) {
+				
+			} else {
+				CoronaPessoa = 
+			}
+		}
 
 		@Override
 		public String toString() {
