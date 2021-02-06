@@ -1,38 +1,37 @@
 package telefone;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class Agenda {
+
+	private String nomeAgenda;
+	private ArrayList<Contato> Contatos;
 	
-	private Contato contatos[]  = new Contato[5];
-	
-	public Contato[] getContatos() {
-		return contatos;
+	public Agenda(String nomeAgenda) {
+		this.nomeAgenda = nomeAgenda;
+		this.Contatos = new ArrayList<>();
 	}
 	
-	public void setContatos(Contato[] contatos) {
-		this.contatos = contatos;
+	//cadastrar
+	public void cadastrar(Contato contato) {
+		Contatos.add(contato);
 	}
 	
+	//excluir
+	public void excluir(Contato contato) {
+		Contatos.remove(contato);
+	}
+	
+	//atualizar
+	public void atualizar() {
+	}
+	
+	//listar
 	public void listar() {
-		for (int i = 0; i < contatos.length; i++) {
-			Contato contato = contatos[i];
-			if (contato != null) {
-				System.out.println("Nome: " + contato.getNome());
-				System.out.println("Email: " + contato.getEmail());
-				System.out.println("...");
-			}
+		for (Contato contato : Contatos) {
+			System.out.println(contato);
 		}
 	}
-	
-	private void excluir() {
-	
-	}
-	
-	private void atualizar() {
-	
-	}
-	
-	private void novoContato() {
-		
-	} 
 	
 }

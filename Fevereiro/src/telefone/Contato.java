@@ -3,12 +3,18 @@ package telefone;
 public class Contato {
 	
 	private int codigo;
-	private String nome;
-	private String email;
-	private String empresa;
-	private String telefoneResidencial;
-	private String telefoneCelular;
+	private String nome, email, empresa, telefoneResidencial, telefoneCelular;
 	
+	public Contato(int codigo, String nome, String email, String empresa, String telefoneResidencial,
+			String telefoneCelular) {
+		super();
+		this.codigo = codigo;
+		this.nome = nome;
+		this.email = email;
+		this.empresa = empresa;
+		this.telefoneResidencial = telefoneResidencial;
+		this.telefoneCelular = telefoneCelular;
+	}
 	
 	public int getCodigo() {
 		return codigo;
@@ -46,7 +52,12 @@ public class Contato {
 	public void setTelefoneCelular(String telefoneCelular) {
 		this.telefoneCelular = telefoneCelular;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Contato [codigo=" + codigo + ", nome=" + nome + ", email=" + email + ", empresa=" + empresa
+				+ ", telefoneResidencial=" + telefoneResidencial + ", telefoneCelular=" + telefoneCelular + "]";
+	}
 	
 	
 }
