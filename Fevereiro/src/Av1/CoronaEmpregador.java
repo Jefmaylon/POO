@@ -30,10 +30,12 @@ public class CoronaEmpregador extends CoronaPessoa {
 		this.mesBeneficio = rand.nextInt(12) + 1;
 	}
 	
+	// letra R
+	
 	public void getBeneficioEmpregador() {
 		if (numFunc < 10) {
 			double beneficioEmpregador = 0;
-			beneficioEmpregador = valorBeneficio * 10;
+			beneficioEmpregador = valorBeneficio * mesBeneficio;
 		}
 	} 
 
