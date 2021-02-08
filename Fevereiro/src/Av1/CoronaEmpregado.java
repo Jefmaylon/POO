@@ -25,6 +25,8 @@ public class CoronaEmpregado extends CoronaPessoa {
 		this.mesBeneficio = rand.nextInt(12) + 1;
 	}
 	
+	// letra U
+	
 	public void getBeneficioEmpregado() {
 		double beneficioEmpregado = valorBeneficio;
 		if (valorBeneficio > 1000) {
@@ -32,6 +34,7 @@ public class CoronaEmpregado extends CoronaPessoa {
 		}
 	}
 	
+	// letra E
 	public void getBeneficioAposentado() {
 		double beneficioAposentado = 0;
 		if (isAposentado) {

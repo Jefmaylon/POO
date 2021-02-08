@@ -34,9 +34,10 @@ public class CoronaEmpregador extends CoronaPessoa {
 	
 	public void getBeneficioEmpregador() {
 		if (numFunc < 10) {
-			double beneficioEmpregador = 0;
+			double beneficioEmpregador = 0.0;
 			beneficioEmpregador = valorBeneficio * mesBeneficio;
 		}
+		
 	} 
 
 	@Override
