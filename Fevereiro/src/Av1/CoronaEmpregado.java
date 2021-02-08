@@ -1,44 +1,46 @@
 package Av1;
 
-	import java.util.ArrayList;
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
-	public class CoronaEmpregado extends CoronaPessoa {
-		
-		private ArrayList<CoronaEmpregado> empregados;
-		boolean isAposentado;
-		
-		public CoronaEmpregado(String nomeCompleto, String dataNascimento, String estadoUF, CoronaCategoria categoria, boolean isAposentado) {
-			super(nomeCompleto, dataNascimento, estadoUF, categoria);
-			this.isAposentado = isAposentado;
-			this.empregados = new ArrayList<>();
+public class CoronaEmpregado extends CoronaPessoa {
+	
+	boolean isAposentado;
+	
+	public CoronaEmpregado(String nomeCompleto, String dataNascimento, String estadoUF, CoronaCategoria categoria, boolean isAposentado, double valorBeneficio, int mesBeneficio) {
+		super(nomeCompleto, dataNascimento, estadoUF, categoria, valorBeneficio, mesBeneficio);
+		this.isAposentado = isAposentado;
+	}
+	
+	public boolean getIsAposentado() {
+		return isAposentado;
+	}
+	
+	public void setValorBeneficio() {
+		this.valorBeneficio = ThreadLocalRandom.current().nextInt(1000, 1800 + 1);
+	}
+	
+	public void setMesBeneficio() {
+		Random rand = new Random();
+		this.mesBeneficio = rand.nextInt(12) + 1;
+	}
+	
+	public void getBeneficioEmpregado() {
+		double beneficioEmpregado = valorBeneficio;
+		if (valorBeneficio > 1000) {
+			beneficioEmpregado = valorBeneficio * mesBeneficio;
 		}
+	}
+	
+	public void getBeneficioAposentado() {
+		double beneficioAposentado = 0;
+		if (isAposentado) {
+			beneficioAposentado = valorBeneficio * mesBeneficio;
+		}
+	}
 
-		public ArrayList<CoronaEmpregado> getEmpregados() {
-			return empregados;
-		}
-
-		public void setEmpregados(ArrayList<CoronaEmpregado> empregados) {
-			this.empregados = empregados;
-		}
-
-		public boolean isAposentado() {
-			return isAposentado;
-		}
-
-		public void setAposentado(boolean isAposentado) {
-			this.isAposentado = isAposentado;
-		}
-		
-		public void getBeneficioEmpregado() {
-			if (isAposentado == true) {
-				
-			} else {
-				CoronaPessoa = 
-			}
-		}
-
-		@Override
-		public String toString() {
-			return "CoronaEmpregado [empregados=" + empregados + ", isAposentado=" + isAposentado + "]";
-		}
+	@Override
+	public String toString() {
+		return getNomeCompleto() + " " + getDataNascimento() + " " + getEstadoUF() + " " + getCategoria() + " " + getIsAposentado() + " " + getValorBeneficio() + " " + getMesBeneficio();
+	}
 }
